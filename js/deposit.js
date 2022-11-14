@@ -8,12 +8,18 @@ document.getElementById('btn-deposit').addEventListener('click', function () {
 
     console.log(preDeposit1);
 
-    const totalDeposit = deposit1 + preDeposit1;
+    const totalDeposit = parseFloat(preDeposit1) + parseFloat(deposit1);
     console.log(totalDeposit);
 
-    preDeposit.innerText = totalDeposit;
+    preDeposit.innerText = parseFloat(totalDeposit);
     console.log(totalDeposit);
     deposit.value = '';
+
+    //get total balance
+    const balanceTotalElement = document.getElementById('balance');
+    const balanceTotalString = balanceTotalElement.innerText;
+    const newBalanceTotal = parseFloat(balanceTotalString) + parseFloat(deposit1);
+    balanceTotalElement.innerText = newBalanceTotal;
 
 })
 
